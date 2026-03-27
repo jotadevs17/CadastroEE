@@ -1,1 +1,41 @@
-Aqui está a versão atualizada do seu README, incluindo as informações sobre a instituição e o curso, mantendo o padrão sem emojis ou travessões conforme solicitado.Sistema de Cadastro de Produtos com Java EE e EJBSobre o ProjetoEste projeto foi desenvolvido como parte integrante de um trabalho prático para o curso superior de Desenvolvimento Full Stack na faculdade Estácio de Sá. Trata-se de uma aplicação corporativa criada na IDE NetBeans para demonstrar o domínio de padrões da plataforma Java EE 6. O sistema utiliza uma arquitetura multicamadas para garantir o desacoplamento entre a lógica de negócios, a persistência de dados e a interface do usuário.Arquitetura e OrganizaçãoO projeto foi organizado seguindo o padrão Enterprise Archive (EAR), dividindo-se em módulos específicos para cada responsabilidade:Módulo EJB: Contém a lógica de negócios e a camada de persistência.Módulo WAR: Gerencia a interface web e os controladores.Módulo EAR: Responsável por empacotar os módulos anteriores para deploy em servidores de aplicação.Tecnologias e Padrões UtilizadosJPA (Java Persistence API): Utilizada para o mapeamento objeto-relacional da entidade Produto, eliminando a necessidade de escrita manual de SQL.EJB (Enterprise JavaBeans): Implementação de Session Beans Stateless para encapsular regras de negócio e gerenciar transações de forma automática.Front Controller: Implementado via Servlet (ServletProdutoFC) para centralizar todas as requisições da aplicação e coordenar o fluxo de navegação.MVC (Model-View-Controller): Separação clara entre Servlets como controladores e JSPs como camada de visão.Bootstrap: Framework CSS utilizado para garantir uma interface responsiva e profissional sem a necessidade de folhas de estilo customizadas.Estrutura do Banco de DadosA entidade principal Produto contém os seguintes atributos mapeados via javax.persistence:ID (Identificador único e auto-incrementado).Nome.Quantidade.Preço de Venda.FuncionalidadesO sistema oferece um fluxo completo de CRUD (Create, Read, Update, Delete) através de uma interface web:Listagem dinâmica de produtos via JSTL.Inclusão e alteração de itens através de formulários validados.Exclusão de registros com integração direta entre Controller e Facade.
+# Relatório Técnico: Desenvolvimento Back-End Corp. Java
+
+## Identificação do Projeto
+**Instituição**: Faculdade Estácio de Sá
+**Curso**: Superior de Tecnologia em Desenvolvimento Full Stack 
+**Módulo**: Desenvolvimento Back-End Corp. Java 
+***Aluno**: João Pedro Ramos Ferreira Oliveira
+
+---
+
+## Organização do Projeto
+O projeto corporativo no NetBeans foi estruturado seguindo o padrão Java EE 6, dividido em três módulos principais para garantir o desacoplamento e facilitar a manutenção
+
+**Módulo EAR (Enterprise Archive)**: Responsável pelo empacotamento da aplicação para deploy
+**Módulo EJB**: Contém a lógica de negócios e a camada de persistência
+**Módulo WAR**: Gerencia a interface web e a comunicação com o usuário
+
+---
+
+## Arquitetura e Persistência
+A implementação utiliza tecnologias nativas da plataforma Enterprise para automação de processos:
+
+**JPA (Java Persistence API)**: Realiza o mapeamento objeto-relacional da tabela Produto sem necessidade de SQL explícito, utilizando o pacote javax.persistence
+**EJB (Enterprise JavaBeans)**: Uso de Session Beans Stateless para encapsular as regras de negócio e gerenciar as transações com o banco de dados automaticamente
+**Entidade Produto**: A classe modelo utiliza anotações como @Entity, @Table e @Id para definir a estrutura no banco de dados
+
+---
+
+## Padrões de Projeto e Camada de Visão
+O fluxo da aplicação segue padrões de mercado para organização de código
+
+**Front Controller**: Implementado através do ServletProdutoFC, que centraliza todas as requisições e identifica a ação desejada: listar, incluir, alterar ou excluir
+**Servlets e JSPs**: Os Servlets atuam como controladores do fluxo de navegação, enquanto as JSPs funcionam como a camada de visão (View)
+**Design Responsivo**: Inclusão do framework Bootstrap via CDN para garantir um design limpo e profissional sem a necessidade de arquivos CSS customizados
+
+---
+
+## Funcionalidades Implementadas
+Listagem de produtos com JSTL (c:forEach)
+Operações de CRUD completas integradas ao EJB Facade
+Redirecionamento dinâmico de páginas via RequestDispatcher
